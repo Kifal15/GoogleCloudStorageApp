@@ -1,0 +1,17 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    {% if 'email' in session %}
+        <h1>Welcome, {{ session['email'] }}</h1>
+        <p>Your User ID: {{ session['user_id'] }}</p>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <p>You are not logged in. <a href="/login">Login</a></p>
+    {% endif %}
+</body>
+</html>

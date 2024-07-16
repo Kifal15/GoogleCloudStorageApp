@@ -1,0 +1,16 @@
+runtime: python39  # Use Python 3.8 runtime
+
+handlers:
+- url: /static
+  static_dir: static  # Serve static files from the 'static' directory
+
+- url: .*
+  script: auto  # Automatically run Flask app for all other routes
+
+env_variables:
+  FLASK_SECRET_KEY: ""  # Set your secret key here
+  GOOGLE_APPLICATION_CREDENTIALS: "modular-button-416311-92b81b0ca02a.json"  # Set path to your GCP credentials file
+  MYSQL_USER: "root"  # Set your MySQL username
+  MYSQL_PASSWORD: "tmn11tje"  # Set your MySQL password
+  MYSQL_DATABASE: "kifal"  # Set your MySQL database name
+  CLOUD_SQL_CONNECTION_NAME: "modular-button-416311:us-central1:kifal22"  # Set your Cloud SQL connection name
